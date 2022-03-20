@@ -1,3 +1,7 @@
+/** Project by Akashay Anand
+ *  we can use the methods of animate in any combination to create desired animation
+ *
+ * */
 package com.anand.animationspractice;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,21 +15,21 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
     int i=0,j=0;
-    public void fade_image(View view){
-        Log.i("info","image pressed");
+    public void fade_image(View view){  // see explanation 1
+        Log.i("info","image pressed");  // printing this message on 'logcat' console if this function executes(onClick on image).
         ImageView iv1 = (ImageView) findViewById(R.id.imageView1);
         ImageView iv2 = (ImageView) findViewById(R.id.imageView2);
         if(i==0) {
             i = 1;
             iv1.animate().alpha(0).setDuration(2000);
-            iv2.animate().setDuration(2000).alpha(1);
+            iv2.animate().setDuration(2000).alpha(1);  // we can use any combination
         }else{
             i=0;
             iv2.animate().alpha(0).setDuration(2000);
             iv1.animate().alpha(1).setDuration(2000);
         }
     }
-    public void fade_button(View view){
+    public void fade_button(View view){  // see explanation 1
         Button bt1 =(Button) findViewById(R.id.button1);
         Button bt2 = (Button) findViewById(R.id.button2);
         if(j==0){
@@ -50,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void animate_fun5(View view){
         ImageView iv5 = (ImageView) findViewById(R.id.image_5);
-        iv5.animate().rotation(540).setDuration(2000);
+        iv5.animate().rotation(540).setDuration(2000);  // value for rotation are in degree ; 180 = half rotation, 360 = complete rotation , respectively;
 
     }
     public void animate_fun6(View view){
         ImageView iv6 = (ImageView) findViewById(R.id.image_6);
-        iv6.animate().scaleX(0.5f);
+        iv6.animate().scaleX(0.5f);  // change the size
 
     }
     public void animate_fun7(View view){
@@ -82,3 +86,15 @@ public class MainActivity extends AppCompatActivity {
 //        s_iv.animate().translationX(1500).setDuration(1000);
     }
 }
+
+/**
+ *  [ Explanation 1 ] -- fade_image method
+ *  we first linked image variable with their respective id
+ *  'animate()' contains lots of method, and alpha() is one of them.
+ *  alpha() values are either 0 or 1 ;at 0 invisible and at 1 visible
+ *  setDuration() method takes time in milliseconds, So the value passed in it is time. that we impact fading time.  ex: 2000 = 2 second
+ *  initially in xml we set 0 for alpha for 2nd image so that it is invisible and only 1st image is visible at the starting.
+ *
+ *  Note: This method works on every view i.e: imageview, button, textview etc.
+ *
+ * **/
