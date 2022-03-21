@@ -1,10 +1,10 @@
 # git-Project
 < Learning Git >
 
-Project Type -- Android Application
-Software Used -- Android Studio
-Main Languages -- Java, XML
-App name -- Animate Image
+Project Type -- Android Application .... 
+Software Used -- Android Studio ....
+Main Languages -- Java, XML ....
+App name -- Animate Image ....
 
 # Description
 
